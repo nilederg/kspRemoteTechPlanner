@@ -56,7 +56,7 @@ namespace App {
             for (let ae of this.antennas) {
                 if (ae.antenna.type === AntennaType.omni) {
                     totalOmniRange += ae.antenna.range * ae.quantity;
-                    totalOmniElcNeeded += ae.antenna.elcNeeded + ae.quantity;
+                    totalOmniElcNeeded += ae.antenna.elcNeeded * ae.quantity;
                 }
             }
             this.mam.range += (totalOmniRange - this.longestRangeOmni().range) * multipleAntennaMultiplier;
